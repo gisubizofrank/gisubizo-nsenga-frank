@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Booking Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Booking Registration</h2>
+    <form id="bookingForm" onsubmit="submitForm(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" required>
+
+      <label for="checkIn">Check-in Date:</label>
+      <input type="date" id="checkIn" required>
+
+      <label for="checkOut">Check-out Date:</label>
+      <input type="date" id="checkOut" required>
+
+      <label for="numGuests">Number of Guests:</label>
+      <input type="number" id="numGuests" min="1" required>
+
+      <label for="specialRequests">Special Requests:</label>
+      <textarea id="specialRequests" rows="4"></textarea>
+
+     <center> <input type="submit" value="Submit"></center>
+    </form>
+  </div>
+  <style>
+    body{
+        background-color: aqua;
+    }
+    .container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #45a04999;
+}
+
+h2 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #afac4c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+  </style>
+  <script defer>
+function submitForm(event) {
+  event.preventDefault();
+
+
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var phone = document.getElementById('phone').value;
+  var checkIn = document.getElementById('checkIn').value;
+  var checkOut = document.getElementById('checkOut').value;
+  var numGuests = document.getElementById('numGuests').value;
+  var specialRequests = document.getElementById('specialRequests').value;
+
+  console.log('Name:', name);
+  console.log('Email:', email);
+  console.log('Phone:', phone);
+  console.log('Check-in Date:', checkIn);
+  console.log('Check-out Date:', checkOut);
+  console.log('Number of Guests:', numGuests);
+  console.log('Special Requests:', specialRequests);
+
+
+  document.getElementById('bookingForm').reset();
+}
+
+  </script>
+</body>
+</html>
